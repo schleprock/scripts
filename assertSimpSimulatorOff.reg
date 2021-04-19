@@ -1,0 +1,14 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Ansoft\Simplorer\2015.0\Simplorer\SimEngine\Sim2000]
+"AssertOnStart"="0"
+"CompilerAssert"="0"
+[HKEY_CURRENT_USER\Software\Ansoft\Simplorer\2014.0\Simplorer\SimEngine\Sim2000]
+"AssertOnStart"="0"
+"CompilerAssert"="0"
+[HKEY_CURRENT_USER\Software\Ansoft\Simplorer\2016.0\Simplorer\SimEngine\Sim2000]
+"AssertOnStart"="0"
+"CompilerAssert"="0"
+[HKEY_CURRENT_USER\Software\Ansoft\ElectronicsDesktop\2016.0\Simplorer\SimEngine\Sim2000]
+"AssertOnLoad"="0"
+"CompilerAssert"="0"

@@ -1,0 +1,11 @@
+set terminal x11 size 1600,1000
+set datafile separator ','
+set terminal x11 linewidth 2
+set xdata time
+set timefmt "%m/%d/%Y %H:%M"
+set format x "%m-%d\n%H:%M"
+theFile=ARG1
+set title theFile
+numbColumns = system("sed -n '1p' < ".theFile." | awk -F \",\" '{print NF}'")
+plot for [col=2:numbColumns] theFile using 1:col with lines title columnhead
+pause -1

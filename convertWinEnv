@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+for DIR in "/proc/registry/HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/Session Manager/Environment" "/proc/registry/HKEY_CURRENT_USER/Environment"; do
+    pushd "$DIR"
+    for VAR in *; do
+        CAPVAR=`echo "$VAR" | tr '[a-z]' '[A-Z]'`
+        if [ -z "${!CAPVAR}" ]; then
+            ENVVAL=`cat $VAR | tr '\\\' '/'`
+            echo "Setting $VAR to $ENVVAL"
+            export $CAPVAR="$ENVVAL"
+        fi
+    done
+    popd
+done
+

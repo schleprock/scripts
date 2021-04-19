@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+echo
+echo "Diffing $1 and $2"
+echo
+files="ediff-files \"${1}\" \"${2}\""
+emacsx11 --eval "($files)"

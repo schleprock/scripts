@@ -1,0 +1,14 @@
+set terminal x11 size 1850,1000
+set datafile separator ','
+set terminal x11 linewidth 2
+set multiplot layout 2,2
+set title ARG1
+plot for [col=2:6] ARG1 using 1:col with lines title columnhead
+set title ARG2
+plot for [col=2:6] ARG2 using 1:col with lines title columnhead
+set title ARG3
+plot for [col=2:6] ARG3 using 1:col with lines title columnhead
+set title ARG4
+plot for [col=2:6] ARG4 using 1:col with lines title columnhead
+unset multiplot
+pause -1

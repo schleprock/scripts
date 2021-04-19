@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+./reg_ansysedt.exe -shortcut -config "Twin Builder"

@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+unset LS_COLORS
+set LS_OPTIONS=--color=auto
+
+command_oriented_history=1
+history_control=ignoredups
+HISTSIZE=5000
+set -o emacs
+
+alias ssh='ssh -o stricthostkeychecking=no'
+alias df='df -kh'
+alias dusort='du -ks * | sort -nr'
+alias pd=pushd
+alias po=popd
+alias lo=exit
+alias ls='ls --color'
+alias ftp='ftp -i'
+alias xterm='xterm -geometry 80x80 -sb -rightbar'
+alias simplorerCompDebug='export SIMPLORER_COMPILER_DEBUG_ENABLE=true'
+alias simplorerAttachDebugLate='export SIMPLORER_ATTACH_DEBUG_TO_SIM_LATE_239184928=1'
+alias resetbg="echo -e '\e]11;rgb:ff/ff/ff\a'"
+
+alias modelicaJCCdebug='export MODELICA_COMPILER_JCC_DEBUG_ATTACH_ENV_FLAG_35462=1'
+alias setPerformanceEnv='source ~/gitScripts/setPerformanceEnv.sh'
+
+alias saruman="ssh -Y Dad@saruman"
+
+alias roborio="ssh -Y lvuser@10.49.5.2"
+alias roborioUSB="ssh -Y lvuser@172.22.11.2"
+alias pi="ssh -Y pi@4905pi-2.local"
+
+
+alias mkwindir="cmd /c md"
+alias fileExplorer='cmd /c start'
+
+alias gitChmodSetExec="git update-index --chmod=+x"
+alias gitChmodUnsetExec="git update-index --chmod=-x"
+
+alias emacsrobotconfig="emacs /scp:lvuser@10.49.5.2:/home/lvuser/robot.conf"
+
+
+uname=$(uname)
+cygwin=${uname:0:6}
+if [ "$cygwin" == "CYGWIN" ]; then
+    alias dosPath2unix='quoteLine.pl | xargs cygpath.exe'
+    alias regedit='regedit.pl'
+fi

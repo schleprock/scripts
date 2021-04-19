@@ -1,0 +1,22 @@
+[core]
+	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
+	autocrlf = input
+[user]
+	name = frc4905laptop
+	email = andromedaonesoftware@googlegroups.com>
+[diff]
+	guitool = kdiff3
+[difftool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$LOCAL\" \"$REMOTE\"
+[merge]
+	guitool = kdiff3
+[mergetool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false

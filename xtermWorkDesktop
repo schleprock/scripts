@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+export DISPLAY=10.52.2.121:0.0
+xterm -geometry 80x80 -sb -rightbar &
+exit

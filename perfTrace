@@ -1,0 +1,43 @@
+#! /usr/bin/env perl
+use strict;
+
+my $counter = 0;
+while(42) {
+  my $cmd = "typeperf -qx \"\\Process\" > config.txt";
+  if(system($cmd)) {
+    print("ERROR: $cmd failed");
+    exit(1);
+  }
+  $cmd = "grep \"Processor Time\" config.txt > ProcTime${counter}.txt";
+  if(system($cmd)) {
+    print("ERROR: $cmd failed");
+    exit(1);
+  }
+  $cmd = "grep \"Virtual Bytes Peak\" config.txt > VirtBytes${counter}.txt";
+  if(system($cmd)) {
+    print("ERROR: $cmd failed");
+    exit(1);
+  }
+  $cmd = "sort -u ProcTime${counter}.txt -o ProcTime${counter}.sorted.txt";
+  if(system($cmd)) {
+    print("ERROR: $cmd failed");
+    exit(1);
+  }
+  $cmd = "sort -u VirtBytes${counter}.txt -o VirtBytes${counter}.sorted.txt";
+  if(system($cmd)) {
+    print("ERROR: $cmd failed");
+    exit(1);
+  }
+  $cmd = "typeperf -cf ProcTime${counter}.sorted.txt -o procPerf${counter}.csv -f CSV -y -si 2 -sc 2";
+  if(system($cmd)) {
+    print("ERROR: $cmd failed");
+    exit(1);
+  }
+  $cmd = "typeperf -cf VirtBytes${counter}.sorted.txt -o bytesPerf${counter}.csv -f CSV -y -si 2 -sc 1";
+  if(system($cmd)) {
+    print("ERROR: $cmd failed");
+    exit(1);
+  }
+  $counter = $counter + 1;
+  sleep(300);
+}

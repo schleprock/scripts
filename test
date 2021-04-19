@@ -1,0 +1,10 @@
+#! /usr/bin/env perl
+use strict;
+
+use Getopt::Long;
+use Cwd;
+use Cwd 'chdir';
+use Cwd 'realpath';
+
+print("Command passed\n");
+exit 0;

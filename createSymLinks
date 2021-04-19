@@ -1,0 +1,91 @@
+#! /usr/bin/env perl
+
+use strict;
+
+use Getopt::Long;
+use Cwd;
+use File::Basename;
+
+my $source;
+my $dest;
+my $dryRun;
+my $help;
+
+my $scriptName = basename($0);
+
+GetOptions("source=s" => \$source,
+           "dest=s" => \$dest,
+           "dryRun" => \$dryRun,
+           "help|?" => \$help
+    ) or printHelp();
+
+printHelp() if($help);
+
+sub printHelp
+{
+  print("\n$scriptName [--source <source dir>] [--dest <dest dir>]");
+  print("\n\t[--dryRun]\n");
+  print("\n\tNOTE: make sure you use a direct path to the drive, ie\n");
+  print("\t/cygdrive/f/... not /f/...\n");
+  exit
+}
+
+if(!$source)
+{
+  $source = cwd();
+}
+if(!$dest)
+{
+  $dest = cwd();
+}
+if($source eq ".")
+{
+  $source = cwd();
+}
+if($dest eq ".")
+{
+  $dest = cwd();
+}
+if($source eq $dest)
+{
+  print("ERROR: Source and Destination cannot be the same\n");
+  exit 3;
+}
+my $sourceDos;
+if(!chdir($source))
+{
+  print("ERROR: could not cd to $source\n");
+  exit 1;
+}
+$source = cwd();
+$sourceDos = qx/cygpath.exe -m $source/;
+$sourceDos =~ tr|/|\\|;
+chomp($sourceDos);
+print("\nSource dir = $source\nsourceDos = ${sourceDos}\n");
+
+if(!chdir($dest))
+{
+  print("ERROR: could not cd to $dest\n");
+  exit 1;
+}
+my $pwd = cwd();
+print("Destdir: $pwd\n");
+my $cmd = "find $source -mindepth 1 -maxdepth 1 -type d -printf '\"%p\"\n'";
+my @output = qx/$cmd/;
+print("Source dirs:\n @output");
+chomp(@output);
+foreach my $dir(@output)
+{
+  my $baseDir = basename($dir);
+  my $linkCmd = "symLink.bat \"$baseDir \"${sourceDos}\\${baseDir}";
+  #my $linkCmd = "ln -s $dir \"$baseDir";
+  print("linkCmd = $linkCmd\n");
+  if(!$dryRun)
+  {
+    if(system($linkCmd))
+    {
+      print("ERROR: could not execute $linkCmd\n");
+      exit 2;
+    }
+  }
+}

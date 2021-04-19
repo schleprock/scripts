@@ -1,0 +1,1 @@
+start "" "c:\program files\google\chrome\application\chrome.exe" --new-window "https://www.washingtonpost.com/" "https://news.google.com/news/?gl=US&ned=us&hl=en" "https://slashdot.org/" "https://weather.com/weather/5day/l/01464:4:US" "https://finance.yahoo.com/portfolio/pf_1/view/v1"

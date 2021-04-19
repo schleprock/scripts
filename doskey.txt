@@ -1,0 +1,7 @@
+cd=cd /D $*$t%HOME%\scripts\mytitle
+pd=pushd $*$t%HOME%\scripts\mytitle
+popd=popd $t%HOME%\scripts\mytitle
+redo=doskey /macrofile=%HOME%\scripts\doskey.txt
+lo=exit
+e=cd c:\ & d:\emacs-24.3\bin\runemacs.exe $*
+ct=cleartool

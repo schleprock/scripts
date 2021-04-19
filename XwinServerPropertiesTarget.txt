@@ -1,0 +1,1 @@
+D:\cygwin\bin\run.exe -p /usr/X11R6/bin XWin -multiwindow -clipboard -silent-dup-error -listen tcp

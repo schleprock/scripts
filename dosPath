@@ -1,0 +1,8 @@
+#! /usr/bin/env perl
+use strict;
+
+my $dosPath = qx/cygpath.exe -m `pwd`/;
+$dosPath =~ s/\n/ /g;
+# the above substitution adds a space to the end of the path, need to remove it
+chop($dosPath);
+print("$dosPath\n");

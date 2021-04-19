@@ -1,0 +1,7 @@
+#! /usr/bin/env perl
+
+use strict;
+
+my $cmd = "shutdown /r /t 0";
+print("\nrunning cmd: $cmd\n");
+system($cmd);
