@@ -23,7 +23,7 @@ else
     echo
     tasks=`tasklist.exe | egrep "$regex" | awk '{print $2}'`
     for task in $tasks; do
-        taskkill /F /PID $task
+        cmd /c "taskkill /F /PID $task"
     done
 fi
 exit 0
