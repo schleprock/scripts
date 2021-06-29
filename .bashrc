@@ -50,6 +50,13 @@ if [ "$os" == "GNU/Linux" ]; then
     export PATH=~/scripts:~/gitScripts:$PATH
     export NUMBER_OF_PROCESSORS=`nproc`
     alias chrome="google-chrome"
+    # start ssh-agent for gitkraken, only on linux
+    #if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    #    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+    #fi
+    #if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    #    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
+    #fi
 fi
 
 export BUILD_SITE=1
@@ -76,4 +83,8 @@ export EDITOR=emacs
 source ~/scripts/proml
 proml
 
-
+if [ "$myName" == "conwschilplnx" ]; then
+    if [ -n "$SSH_CONNECTION" ]; then
+        echo -e '\e]11;rgb:ee/ee/ee\a'
+    fi
+fi
