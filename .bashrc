@@ -50,14 +50,6 @@ if [ "$os" == "GNU/Linux" ]; then
     export PATH=~/scripts:~/gitScripts:$PATH
     export NUMBER_OF_PROCESSORS=`nproc`
     alias chrome="google-chrome"
-    # start ssh-agent for gitkraken, only on linux
-    if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-        ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
-    fi
-    if [[ ! "$SSH_AUTH_SOCK" ]]; then
-        eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
-    fi
-	xhost +
 fi
 
 export BUILD_SITE=1
