@@ -33,7 +33,14 @@ myName=$(hostname)
 os=$(uname -o)
 if [ "$os" == "Msys" ]; then
     export PATH=~/scripts:~/gitScripts:/c/Program\ Files/Emacs/x86_64/bin/:$PATH
-     set -o igncr
+    set -o igncr
+    # msys overwrites TEMP/TMP which screws up debugging windows stuff, just put
+    # it back
+    export TEMP=$ORIGINAL_TEMP
+    export TMP=$TEMP
+    if [ -d ~/Documents/scripts ]; then
+        export PATH=$PATH:~/Documents/scripts
+    fi
 fi
 
 if [ "$os" == "Cygwin" ]; then
@@ -71,6 +78,14 @@ fi
 
 
 source ~/scripts/aliasStuff
+if [ -f ~/Documents/scripts/moreAliasStuff ]; then
+    echo "Loading more alias stuff"
+    source ~/Documents/scripts/moreAliasStuff
+fi
+if [ -f ~/Documents/scripts/ansysBashrcStuff ]; then
+    echo "Loading more ansys bashrc"
+    source ~/Documents/scripts/ansysBashrcStuff
+fi
 
 if [ -n "$SSH_CLIENT" ]; then
     CLIENTIP=`echo $SSH_CLIENT | awk '{print $1}'`
@@ -82,9 +97,3 @@ export EDITOR=emacs
 
 source ~/scripts/proml
 proml
-
-if [ "$myName" == "conwschilplnx" ]; then
-    if [ -n "$SSH_CONNECTION" ]; then
-        echo -e '\e]11;rgb:ee/ee/ee\a'
-    fi
-fi

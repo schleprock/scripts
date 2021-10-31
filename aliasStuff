@@ -22,7 +22,7 @@ alias simplorerAttachDebugLate='export SIMPLORER_ATTACH_DEBUG_TO_SIM_LATE_239184
 alias resetbg="echo -e '\e]11;rgb:ff/ff/ff\a'"
 
 alias modelicaJCCdebug='export MODELICA_COMPILER_JCC_DEBUG_ATTACH_ENV_FLAG_35462=1'
-alias setPerformanceEnv='source ~/gitScripts/setPerformanceEnv.sh'
+alias setPerformanceEnv='source ~/scripts/setPerformanceEnv.sh'
 
 alias saruman="ssh -Y Dad@saruman"
 
