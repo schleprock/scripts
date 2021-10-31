@@ -40,6 +40,9 @@ alias gitChmodUnsetExec="git update-index --chmod=-x"
 alias emacsrobotconfig="emacs /scp:lvuser@10.49.5.2:/home/lvuser/robot.conf"
 
 alias wsl="/c/Windows/System32/wsl"
+alias excel="/c/Program\ Files/Microsoft\ Office/root/Office16/excel"
+alias rmConanLibs="find . -maxdepth 3 -name \"conaninfo.txt\" | sed -e 's/1.conaninfo.txt//' | xargs rm -r"
+alias findConanLibs="find . -maxdepth 3 -name \"conaninfo.txt\""
 
 uname=$(uname)
 cygwin=${uname:0:6}
