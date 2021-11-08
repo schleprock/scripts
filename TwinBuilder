@@ -1,3 +1,27 @@
 #! /usr/bin/env bash
 
-./ansysedt.exe -config "Twin Builder" &
+guiExec="ansysedt.exe"
+commandSw="-config \"Twin Builder\" &"
+if [ -e "$gitExec" ]; then
+    ./${guiExec} ${commandSw}
+else
+    gitBase=`git rev-parse --show-toplevel`
+    gitBaseUnix=`sed 's/D://' <<< "$gitBase"`
+    if [ -z "$gitBaseUnix" ]; then
+        echo "ERROR: Not in a repo..."
+        exit 2
+    fi
+    type="foo"
+    if [ -e "${gitBaseUnix}/../build_output/64Release/ansysedt.exe" ]; then
+        type="64Release"
+    elif [ -e "${gitBaseUnix}/../build_output/64Debug/ansysedt.exe" ]; then
+        type="64Debug"
+    fi
+    if [ "$type" = "Foo" ]; then
+        echo "ERROR: could not find ansysedt.exe in release or debug..."
+        exit 3
+    fi
+    commandLine="${gitBaseUnix}/../build_output/${type}/ansysedt.exe"
+    echo -e "Running cmd: \n\t$commandLine"
+    $commandLine -config "Twin Builder" &
+fi
