@@ -1,9 +1,14 @@
-set terminal x11 size 1600,1000
+set term wxt
 set datafile separator ','
-set terminal x11 linewidth 2
 set timefmt "%m/%d/%Y %H:%M"
 theFile=ARG1
 set title theFile
 numbColumns = system("sed -n '1p' < ".theFile." | awk -F \",\" '{print NF}'")
 plot for [col=2:numbColumns] theFile using 1:col with lines title columnhead
-pause -1
+done = 0
+bind all 'ctrl-d' 'done = 1'
+while(!done) {
+  pause 1
+}
+unset output
+exit gnuplot

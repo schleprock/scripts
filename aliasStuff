@@ -20,6 +20,9 @@ alias xterm='xterm -geometry 80x80 -sb -rightbar'
 alias simplorerCompDebug='export SIMPLORER_COMPILER_DEBUG_ENABLE=true'
 alias simplorerAttachDebugLate='export SIMPLORER_ATTACH_DEBUG_TO_SIM_LATE_239184928=1'
 alias resetbg="echo -e '\e]11;rgb:ff/ff/ff\a'"
+alias savePath="export OLD_PATH=\$PATH"
+alias dumpPath='env | grep "^PATH="'
+alias resetPath="export PATH=\$OLD_PATH"
 
 alias modelicaJCCdebug='export MODELICA_COMPILER_JCC_DEBUG_ATTACH_ENV_FLAG_35462=1'
 alias setPerformanceEnv='source ~/scripts/setPerformanceEnv.sh'

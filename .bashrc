@@ -32,7 +32,7 @@ fi
 myName=$(hostname)
 os=$(uname -o)
 if [ "$os" == "Msys" ]; then
-    export PATH=~/scripts:~/gitScripts:/c/Program\ Files/Emacs/x86_64/bin/:$PATH
+    export PATH=~/scripts:~/gitScripts:/c/Program\ Files/Emacs/x86_64/bin/:$PATH:/c/Program\ Files/gnuplot/bin
     set -o igncr
     # msys overwrites TEMP/TMP which screws up debugging windows stuff, just put
     # it back
@@ -65,7 +65,7 @@ if [ "$os" == "GNU/Linux" ]; then
     #    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
     #fi
 fi
-
+export OLD_PATH=$PATH
 export BUILD_SITE=1
 
 if [[ $- =~ "i" ]]; then
