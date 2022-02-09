@@ -90,7 +90,10 @@ fi
 if [ -n "$SSH_CLIENT" ]; then
     CLIENTIP=`echo $SSH_CLIENT | awk '{print $1}'`
     echo "connected to $CLIENTIP"
-    export DISPLAY=${CLIENTIP}:0.0
+    DISP=`hostname -i`
+    DISP=${DISP}:10.0
+    echo "Setting DISPLAY to $DISP"
+    export DISPLAY=$DISP
 fi
 
 export EDITOR=emacs
