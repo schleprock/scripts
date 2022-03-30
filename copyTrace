@@ -1,0 +1,23 @@
+#! /usr/bin/env bash
+traceNumb=-1
+while getopts ":n:h" flag; do
+    case ${flag} in
+        n)
+            traceNumb=${OPTARG};;
+        h)
+            echo "Usage: copyTrace -n <traceNumb>"
+            exit 0;;
+        \?)
+            echo "ERROR: must provide a trace number\n"
+            exit 4;;
+    esac
+done
+minusOne=-1
+echo "traceNumb = $traceNumb"
+if (( traceNumb == minusOne )); then
+    echo "ERROR: must provide trace number: -n <int>"
+    exit 2
+fi
+echo "Retrieving trace${traceNumb}"
+scp -r lvuser@10.49.5.2:/home/lvuser/traceLogs/trace${traceNumb} .
+
