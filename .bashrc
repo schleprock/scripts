@@ -31,8 +31,12 @@ fi
 
 myName=$(hostname)
 os=$(uname -o)
+ansysGitScriptsDir=""
+if [ -d ~/TwinBuilder_Dev_ModelicaScripts ]; then
+    ansysGitScriptsDir="~/TwinBuilder_Dev_ModelicaScripts:"
+fi
 if [ "$os" == "Msys" ]; then
-    export PATH=~/scripts:~/gitScripts:/c/Program\ Files/Emacs/x86_64/bin/:$PATH:/c/Program\ Files/gnuplot/bin
+    export PATH=~/scripts:~/gitScripts:${ansysGitScriptsDir}/c/Program\ Files/Emacs/x86_64/bin/:$PATH:/c/Program\ Files/gnuplot/bin
     set -o igncr
     # msys overwrites TEMP/TMP which screws up debugging windows stuff, just put
     # it back
