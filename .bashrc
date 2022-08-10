@@ -58,7 +58,7 @@ if [ "$os" == "Cygwin" ]; then
 fi
 
 if [ "$os" == "GNU/Linux" ]; then
-    export PATH=~/scripts:~/gitScripts:$PATH
+    export PATH=~/scripts:~/gitScripts:${ansysGitScriptsDir}$PATH
     export NUMBER_OF_PROCESSORS=`nproc`
     alias chrome="google-chrome"
     # start ssh-agent for gitkraken, only on linux
