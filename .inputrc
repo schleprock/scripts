@@ -75,4 +75,7 @@ set mark-symlinked-directories on
 
 # get ctrl left/right arrow to work
 "\e[1;5C": forward-word   # ctrl + right
-"\e[1;5D": backward-word  # ctrl + left 
+"\e[1;5D": backward-word  # ctrl + left
+
+# used to set ctrl-V as paste in terminal
+set bind-tty-special-chars off

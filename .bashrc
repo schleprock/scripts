@@ -118,3 +118,14 @@ shopt -s checkwinsize
 
 source ~/scripts/proml
 proml
+
+# this function is used to set ctrl-V as paste in terminal's
+# requires the following line to be added to .inputrc
+#      set bind-tty-special-chars off
+paste () {
+  CLIP=$(cat /dev/clipboard)
+  COUNT=$(echo -n "$CLIP" | wc -c)
+  READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}${CLIP}${READLINE_LINE:$READLINE_POINT}"
+  READLINE_POINT=$(($READLINE_POINT + $COUNT))
+}
+bind -x '"\C-v": paste'
