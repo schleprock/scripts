@@ -6,13 +6,5 @@ use Cwd;
 use Cwd 'chdir';
 use Cwd 'realpath';
 
-my $type = "debug";
-
-
-my $debugSw = "";
-if("$type" eq "debug")
-{
-  $debugSw = "--debug=full";
-}
-
-print("debugSw = $debugSw\n");
+my $scriptsPath = qx!cygpath -m "$ENV{'HOME'}/scripts"!;
+print("$scriptsPath");

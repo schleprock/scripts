@@ -2,11 +2,8 @@
 
 use strict;
 
-use Cwd;
-use Cwd 'chdir';
-
 my $scriptsPath = qx!cygpath -m "$ENV{'HOME'}/scripts"!;
 chomp($scriptsPath);
-my $cmd = "cmd /c \"${scriptsPath}/winReboot.bat\"";
+my $cmd = "cmd /c \"${scriptsPath}/winHibernate.bat\"";
 print("\nrunning cmd: $cmd\n");
 system($cmd);
