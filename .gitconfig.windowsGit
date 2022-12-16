@@ -13,6 +13,8 @@
 	rebase = false
 [rebase]
 	autoStash = false
+	autosquash = false
+	updateRefs = false
 [diff]
 	guitool = kdiff3
 [difftool "kdiff3"]
