@@ -34,6 +34,8 @@ alias roborio="ssh -Y lvuser@10.49.5.2"
 alias roborioUSB="ssh -Y lvuser@172.22.11.2"
 alias pi="ssh -Y pi@4905pi-2.local"
 
+alias findTestFailures='find . -name ".testCaseFailed"'
+alias findDiffs='find . -name "diff*"'
 
 alias mkwindir="cmd /c md"
 alias fileExplorer='cmd /c start'
