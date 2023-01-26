@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+
+cmd /c "symLink.bat $1 $2"

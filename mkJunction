@@ -1,0 +1,12 @@
+#! /usr/bin/env perl
+
+use strict;
+
+use Cwd;
+use Cwd 'chdir';
+
+my $scriptsPath = qx!cygpath -m "$ENV{'HOME'}/scripts"!;
+chomp($scriptsPath);
+my $cmd = "cmd /c \"${scriptsPath}/mkJunction.bat @ARGV[0] @ARGV[1]\"";
+print("\nrunning cmd: $cmd\n");
+system($cmd);
