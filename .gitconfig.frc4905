@@ -20,3 +20,5 @@
 	prune = false
 [rebase]
 	autoStash = false
+	autosquash = false
+	updateRefs = false

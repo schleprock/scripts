@@ -1,3 +1,11 @@
+del .Xdefaults
+del .bash_logout
+del .bash_profile
+del .bashrc
+del .emacs
+del .inputrc 
+del .minttyrc
+
 mklink .Xdefaults scripts\.Xdefaults
 mklink .bash_logout scripts\.bash_logout
 mklink .bash_profile scripts\.bash_profile
