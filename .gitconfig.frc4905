@@ -2,8 +2,8 @@
 	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
 	autocrlf = input
 [user]
-	name = frc4905laptop
-	email = andromedaonesoftware@googlegroups.com>
+	name = Andromeda1ASRSD
+	email = ayershirleyfirst@gmail.com
 [diff]
 	guitool = kdiff3
 [difftool "kdiff3"]
