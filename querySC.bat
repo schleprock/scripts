@@ -1,1 +1,0 @@
-sc query jenkinsslave-D__ansysdev_JenkinsSlave

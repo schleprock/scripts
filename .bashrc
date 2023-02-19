@@ -31,12 +31,12 @@ fi
 
 myName=$(hostname)
 os=$(uname -o)
-ansysGitScriptsDir=""
+workScriptsDir=""
 if [ -d ~/TwinBuilder_Dev_ModelicaScripts ]; then
-    ansysGitScriptsDir="~/TwinBuilder_Dev_ModelicaScripts:"
+    workScriptsDir="~/TwinBuilder_Dev_ModelicaScripts:"
 fi
 if [ "$os" == "Msys" ]; then
-    export PATH=~/scripts:~/gitScripts:${ansysGitScriptsDir}/c/Program\ Files/Emacs/x86_64/bin/:$PATH
+    export PATH=~/scripts:~/gitScripts:${workScriptsDir}/c/Program\ Files/Emacs/x86_64/bin/:$PATH
     set -o igncr
     # msys overwrites TEMP/TMP which screws up debugging windows stuff, just put
     # it back
@@ -58,7 +58,7 @@ if [ "$os" == "Cygwin" ]; then
 fi
 
 if [ "$os" == "GNU/Linux" ]; then
-    export PATH=~/scripts:~/gitScripts:${ansysGitScriptsDir}$PATH
+    export PATH=~/scripts:~/gitScripts:${workScriptsDir}$PATH
     export NUMBER_OF_PROCESSORS=`nproc`
     alias chrome="google-chrome"
     # start ssh-agent for gitkraken, only on linux
@@ -86,9 +86,9 @@ if [ -f ~/Documents/scripts/moreAliasStuff ]; then
     echo "Loading more alias stuff"
     source ~/Documents/scripts/moreAliasStuff
 fi
-if [ -f ~/Documents/scripts/ansysBashrcStuff ]; then
-    echo "Loading more ansys bashrc"
-    source ~/Documents/scripts/ansysBashrcStuff
+if [ -f ~/Documents/scripts/workBashrcStuff ]; then
+    echo "Loading more work bashrc"
+    source ~/Documents/scripts/workBashrcStuff
 fi
 
 if [ -n "$SSH_CLIENT" ]; then
