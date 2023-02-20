@@ -42,9 +42,6 @@ if [ "$os" == "Msys" ]; then
     # it back
     export TEMP=$ORIGINAL_TEMP
     export TMP=$TEMP
-    if [ -d ~/Documents/scripts ]; then
-        export PATH=$PATH:~/Documents/scripts
-    fi
 fi
 
 if [ "$os" == "Cygwin" ]; then
@@ -82,13 +79,13 @@ fi
 
 
 source ~/scripts/aliasStuff
-if [ -f ~/Documents/scripts/moreAliasStuff ]; then
+if [ -f ~/TwinBuilder_Dev_ModelicaScripts/moreAliasStuff ]; then
     echo "Loading more alias stuff"
-    source ~/Documents/scripts/moreAliasStuff
+    source ~/TwinBuilder_Dev_ModelicaScripts/moreAliasStuff
 fi
-if [ -f ~/Documents/scripts/workBashrcStuff ]; then
+if [ -f ~/TwinBuilder_Dev_ModelicaScripts/workBashrcStuff ]; then
     echo "Loading more work bashrc"
-    source ~/Documents/scripts/workBashrcStuff
+    source ~/TwinBuilder_Dev_ModelicaScripts/workBashrcStuff
 fi
 
 if [ -n "$SSH_CLIENT" ]; then
