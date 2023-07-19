@@ -6,5 +6,12 @@ use Cwd;
 use Cwd 'chdir';
 use Cwd 'realpath';
 
-my $scriptsPath = qx!cygpath -m "$ENV{'HOME'}/scripts"!;
-print("$scriptsPath");
+my $cmd = "$ENV{SHELL} -c 'test2.pl | tee /tmp/crap;exit \${PIPESTATUS[0]}' ";
+print("cmd = $cmd\n");
+print("SHELL = $ENV{SHELL}\n");
+if(system($cmd)) {
+  print("ERROR: $cmd FAILED\n\n");
+} else {
+  print("SUCCESS\n");
+}
+

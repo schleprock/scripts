@@ -5,9 +5,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/autosaves/\\1" t))))
- '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
- '(backward-delete-char-untabify-method (quote all))
+ '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
+ '(backup-directory-alist '((".*" . "~/.emacs.d/backups/")))
+ '(backward-delete-char-untabify-method 'all)
  '(case-fold-search t)
  '(column-number-mode t)
  '(compilation-scroll-output t)
@@ -17,19 +17,17 @@
    "make -k DEBUG=1 BUILD_DOCS=0 NOINLINE=1 -j DEBUGGER_FLAG=-ggdb NOPURGE=1 DISTCC=1; xmessage \"makedebug64 completed\" -center -default okay")
  '(current-language-environment "UTF-8")
  '(default-frame-alist
-    (quote
-     ((vertical-scroll-bars . right)
+    '((vertical-scroll-bars . right)
       (tool-bar-lines . 0)
       (menu-bar-lines . 1)
       (width . 80)
-      (height . 70))))
+      (height . 70)))
  '(default-input-method "rfc1345")
  '(delete-selection-mode t nil (delsel))
  '(global-font-lock-mode t nil (font-lock))
  '(grep-command "grep -n -s ")
  '(grep-files-aliases
-   (quote
-    (("el" . "*.el")
+   '(("el" . "*.el")
      ("ch" . "*.[ch]")
      ("c" . "*.c")
      ("h" . "*.h")
@@ -38,33 +36,32 @@
      ("l" . "[Cc]hange[Ll]og*")
      ("tex" . "*.tex")
      ("texi" . "*.texi")
-     ("cchh" . "*.cc *.hh"))))
- '(grep-find-ignored-directories (quote ("SCCS" "RCS" ".svn" ".git")))
- '(grep-find-ignored-files (quote (".#*" "*.o" "*~" "*.bin" "*.bak" "*.lnk" "*.dll")))
+     ("cchh" . "*.cc *.hh")))
+ '(grep-find-ignored-directories '("SCCS" "RCS" ".svn" ".git"))
+ '(grep-find-ignored-files '(".#*" "*.o" "*~" "*.bin" "*.bak" "*.lnk" "*.dll"))
  '(gud-chdir-before-run nil)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-frame-alist
-   (quote
-    ((vertical-scroll-bars . right)
+   '((vertical-scroll-bars . right)
      (tool-bar-lines . 0)
      (menu-bar-lines . 1)
      (width . 80)
-     (height . 70))))
+     (height . 70)))
  '(kill-whole-line t)
  '(next-error-highlight t)
  '(perl-indent-level 2)
  '(printer-name "_192_168_4_201")
  '(read-file-name-completion-ignore-case t)
- '(scroll-bar-mode (quote right))
+ '(scroll-bar-mode 'right)
  '(scroll-conservatively 5000)
  '(scroll-margin 2)
  '(select-enable-clipboard t)
  '(show-paren-mode t nil (paren))
- '(special-display-frame-alist (quote ((height . 70) (width . 80) (unsplittable . t))))
+ '(special-display-frame-alist '((height . 70) (width . 80) (unsplittable . t)))
  '(tab-width 4)
  '(tool-bar-mode nil)
- '(warning-suppress-types (quote ((undo discard-info)))))
+ '(warning-suppress-types '((undo discard-info))))
 
 (global-set-key [f1] 'undo) ;; Undo
 (global-set-key [f2] 'kill-region) ;; cut
@@ -209,7 +206,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Courier New" :foundry "outline" :slant normal :weight normal :height 90 :width normal)))))
+ '(default ((t (:family "Arial" :foundry "Mono" :slant normal :weight normal :height 98 :width normal)))))
 (ido-mode t)
 
 ;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
