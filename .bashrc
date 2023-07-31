@@ -66,6 +66,7 @@ if [ "$os" == "GNU/Linux" ]; then
     #    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
     #fi
     export ANSYSEM_ROOT241=/ansysdev/AnsysEM/v241/Linux64
+    export ANSYSEM_ROOT232=/ansysdev/AnsysEM/v232/Linux64
 fi
 export OLD_PATH=$PATH
 export BUILD_SITE=1
