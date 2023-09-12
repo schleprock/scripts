@@ -36,7 +36,7 @@ if [ -d ~/TwinBuilder_Dev_ModelicaScripts ]; then
     workScriptsDir="~/TwinBuilder_Dev_ModelicaScripts:"
 fi
 if [ "$os" == "Msys" ]; then
-    export PATH=~/scripts:~/gitScripts:${workScriptsDir}/c/Program\ Files/Emacs/x86_64/bin/:$PATH
+    export PATH=~/scripts:~/gitScripts:${workScriptsDir}$PATH
     set -o igncr
     # msys overwrites TEMP/TMP which screws up debugging windows stuff, just put
     # it back
