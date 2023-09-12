@@ -38,10 +38,22 @@ fi
 if [ "$os" == "Msys" ]; then
     export PATH=~/scripts:~/gitScripts:${workScriptsDir}$PATH
     set -o igncr
-    # msys overwrites TEMP/TMP which screws up debugging windows stuff, just put
-    # it back
+    # msys overwrites TEMP/TMP which screws up debugging windows stuff,
+    # just put it back
     export TEMP=$ORIGINAL_TEMP
     export TMP=$TEMP
+    # have to search for a winders emacs to put on path
+    emacsExe=`find /c/Program\ Files/Emacs/ -name "emacs.exe"`
+    echo "emacsExe = $emacsExe"
+    if [ -z "$emacsExe" ]; then
+        echo "No winders emacs found"
+    else
+        echo "winders emacs found"
+        emacsDir="$(dirname "$emacsExe")"
+        echo "emacsDir = $emacsDir"
+        export PATH=$PATH:$emacsDir
+    fi
+
 fi
 
 if [ "$os" == "Cygwin" ]; then
