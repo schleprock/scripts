@@ -1,0 +1,26 @@
+#! /usr/bin/env perl
+use strict;
+
+use File::Basename;
+
+sub printHelp
+{
+  my $scriptName = basename($0);
+  print("\n$scriptName <text to convert, do not enclose in \" or '>\n");
+  print("\t<text to convert>: is required\n");
+  exit 1;
+}
+
+if(!$ARGV[0]) {
+  print("ERROR: need to specify text to convert\n");
+  printHelp();
+}
+chomp(@ARGV);
+print("\nConverting:\n@ARGV\n\n");
+my $args = "[\"";
+for my $arg(@ARGV) {
+  $args = "${args}${arg}\", \"";
+}
+chop $args for 1 .. 3; # remove the ending ", "
+$args = "${args}]";
+print("\nConverted:\n$args\n");

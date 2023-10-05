@@ -1,0 +1,30 @@
+#! /usr/bin/env perl
+
+use strict;
+
+use Getopt::Long;
+
+my $fileNumb;
+my $help;
+
+GetOptions("fileNumb:i" => \$fileNumb,
+           "help|?" => \$help,) or printHelp();
+
+if($help) {
+  printHelp();
+}
+
+sub printHelp
+{
+  print("\n$0 [--fileNumb <int>] [--help]\n");
+  exit 1;
+}
+
+if(!$fileNumb) {
+  $fileNumb = 0;
+}
+my $outputFile = "outputFile${fileNumb}.sed.sed.tr";
+my $goldFile = "outputFile${fileNumb}.gold.sed.sed.tr";
+my $cmd = "ediffBuffers $outputFile $goldFile &";
+print("\nCalling: \n\t$cmd\n\n");
+system($cmd);
