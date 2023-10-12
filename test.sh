@@ -1,14 +1,16 @@
 #! /usr/bin/env bash
 
-echo "whoami: "
-whoami
-echo "Env:"
-env
-echo
-if ! ~/scripts/test; then
-	echo "SUCCESS: update was successful"
+emacsExe=`find /c/Program\ Files/Emacs/ -name "emacs.exe"`
+echo "emacsExe = $emacsExe"
+echo "crap"
+if [ -z "$emacsExe" ]; then
+    echo "No winders emacs found"
 else
-	echo "FAIL: update failed "
-    exit 1
+    echo "winders emacs found"
+    emacsDir="$(dirname "$emacsExe")"
+    echo "more crap"
+    echo "emacsDir = $emacsDir"
+    echo "even more crap"
+    #export PATH=$PATH:$emacsDir
 fi
-exit 0
+#echo "PATH=$PATH"
