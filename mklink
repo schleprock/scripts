@@ -1,4 +1,9 @@
 #! /usr/bin/env bash
 
+# first replace forward slashes with backslashes
+first=${1//\//\\}
+second=${2//\//\\}
+myCmd="symLink.bat $first $second"
+echo "Running $myCmd"
+cmd /c "$myCmd"
 
-cmd /c "symLink.bat $1 $2"
