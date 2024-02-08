@@ -5,18 +5,26 @@ function proml
 	case $TERM in
 		xterm*)
             hostname=`hostname`
-            if [ "$hostname" == "AAPi9UcoQ6nHHv2" ]; then
-                hostname="Laptop"
-            fi
-            if [ "$hostname" == "conw10tbdev01" ]; then
-                hostname="HugeServer"
-            fi
-            if [ "$hostname" == "cdcub22dtv01" ]; then
-                hostname="Ubuntu"
-            fi
-            if [ "$hostname" == "cdcry8tb01" ]; then
-                hostname="Rocky"
-            fi
+            case $hostname in
+                AAPi9UcoQ6nHHv2)
+                    hostname="Laptop";;
+                conw10tbdev01)
+                    hostname="HugeServer";;
+                cdcub22dtv01)
+                    hostname="Ubuntu";;
+                cdcry8tb01)
+                    hostname="Rocky";;
+                conw10regv01)
+                    hostname="conbld1";;
+                conw10regv02)
+                    hostname="conbld2";;
+                cdcw10simplore1)
+                    hostname="canbld1";;
+                cdcw10simplore2)
+                    hostname="canbld2";;
+                *)
+                    echo -n "Unregistered hostname";;
+            esac
 			local TITLEBAR='\[\033]0;\u@$hostname:\w\007\]'
 			;;
 		*)
