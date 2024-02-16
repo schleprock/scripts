@@ -109,7 +109,7 @@ if [ -n "$SSH_CLIENT" ]; then
     DISP=`hostname -i`
     DISP=${DISP}:10.0
     echo "Setting DISPLAY to $DISP"
-    export DISPLAY=$DISP
+    #export DISPLAY=$DISP
 fi
 
 export EDITOR=emacs
