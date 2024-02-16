@@ -1,0 +1,29 @@
+[core]
+	autocrlf = input
+	filemode = true
+[user]
+	name = William J. Schilp, PhD
+	email = william.schilp@ansys.com
+[http]
+	sslverify = true
+[fetch]
+	prune = true
+[pull]
+	rebase = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false
+[diff]
+	guitool = kdiff3
+[difftool "kdiff3"]
+	path = /bin/kdiff3
+	cmd = /bin/kdiff3 $LOCAL $REMOTE
+[merge]
+	tool = kdiff3
+	guitool = kdiff3
+[mergetool "kdiff3"]
+	path = /bin/kdiff3
+	cmd = /bin/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
+[mergetool]
+	keepBackup = false
