@@ -1,6 +1,6 @@
 Columns=80
 Rows=80
-BackgroundColour=255,255,255
+BackgroundColour=192,192,192
 CursorColour=0,0,0
 ThemeFile=xterm
 ForegroundColour=0,0,0

@@ -56,7 +56,7 @@ if [ "$os" == "Msys" ]; then
 
 fi
 if [ -d ~/utilities4905 ]; then
-    PATH=$PATH:utilities4905
+    PATH=$PATH:~/utilities4905
 fi
 
 if [ "$os" == "Cygwin" ]; then
