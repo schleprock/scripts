@@ -52,8 +52,11 @@ if [ "$os" == "Msys" ]; then
         emacsDir="$(dirname "$emacsExe")"
         echo "emacsDir = $emacsDir"
         export PATH=$PATH:$emacsDir
-    fi
+    fi 
 
+fi
+if [ -d ~/utilities4905 ]; then
+    PATH=$PATH:utilities4905
 fi
 
 if [ "$os" == "Cygwin" ]; then
