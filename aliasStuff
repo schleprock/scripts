@@ -30,8 +30,8 @@ alias setPerformanceEnv='source ~/scripts/setPerformanceEnv.sh'
 
 alias saruman="ssh -Y Dad@saruman"
 
-alias roborio="ssh -Y lvuser@10.49.5.2"
-alias roborioUSB="ssh -Y lvuser@172.22.11.2"
+alias roborio="ssh -Y admin@10.49.5.2"
+alias roborioUSB="ssh -Y admin@172.22.11.2"
 alias pi="ssh -Y pi@4905pi-2.local"
 
 alias mkwindir="cmd /c md"
