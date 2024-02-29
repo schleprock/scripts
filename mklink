@@ -1,7 +1,31 @@
 #! /usr/bin/env bash
 
+usage() {
+    echo "Usage: $(basename "$0")  [-h] target link"
+}
+
+while getopts ":h" arg; do
+    case $arg in
+        h | *)
+            usage
+            exit 0
+            ;;
+    esac
+done
+# shift args to end to pick up positional arguments
+shift $(($OPTIND - 1))
 # first replace forward slashes with backslashes
+if [ -z "$1" ]; then
+    echo "ERROR: must provide target path"
+    usage
+    exit 1
+fi
 first=${1//\//\\}
+if [ -z "$2" ]; then
+    echo "ERROR: must provide link path"
+    usage
+    exit 1
+fi
 second=${2//\//\\}
 myCmd="symLink.bat $first $second"
 echo "Running $myCmd"
