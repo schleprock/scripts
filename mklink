@@ -27,7 +27,11 @@ if [ -z "$2" ]; then
     exit 1
 fi
 second=${2//\//\\}
-myCmd="symLink.bat $first $second"
+if [ -d "$1" ]; then
+    myCmd="symLinkDirectory.bat $first $second"
+else
+    myCmd="symLinkFile.bat  $first $second"
+fi
 echo "Running $myCmd"
 cmd /c "$myCmd"
 
