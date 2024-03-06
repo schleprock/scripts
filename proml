@@ -24,8 +24,6 @@ function proml
                     hostname="canbld1";;
                 cdcw10simplore2)
                     hostname="canbld2";;
-                *)
-                    echo -n "Unregistered hostname";;
             esac
 			local TITLEBAR='\[\033]0;\u@$hostname:\w\007\]'
 			;;
