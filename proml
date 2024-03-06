@@ -18,6 +18,8 @@ function proml
                     hostname="conbld1";;
                 conw10regv02)
                     hostname="conbld2";;
+                conw10regv03)
+                    hostname="conbld3";;
                 cdcw10simplore1)
                     hostname="canbld1";;
                 cdcw10simplore2)
