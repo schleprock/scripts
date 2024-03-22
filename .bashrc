@@ -80,6 +80,7 @@ if [ "$os" == "GNU/Linux" ]; then
     #if [[ ! "$SSH_AUTH_SOCK" ]]; then
     #    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
     #fi
+    export ANSYSEM_ROOT251=/ansysdev/AnsysEM/v251/Linux64
     export ANSYSEM_ROOT242=/ansysdev/AnsysEM/v242/Linux64
     export ANSYSEM_ROOT241=/ansysdev/AnsysEM/v241/Linux64
     export ANSYSEM_ROOT232=/ansysdev/AnsysEM/v232/Linux64
