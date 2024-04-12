@@ -6,6 +6,7 @@ use Getopt::Long;
 
 my $fileNumb;
 my $help;
+my $os = $^O;
 
 GetOptions("fileNumb:i" => \$fileNumb,
            "help|?" => \$help,) or printHelp();
@@ -25,6 +26,10 @@ if(!$fileNumb) {
 }
 my $outputFile = "outputFile${fileNumb}.sed.sed.tr";
 my $goldFile = "outputFile${fileNumb}.gold.sed.sed.tr";
-my $cmd = "ediffBuffers $outputFile $goldFile &";
+my $backGround = "&";
+if($os eq "linux") {
+  $backGround = "";
+}
+my $cmd = "ediffBuffers $outputFile $goldFile $backGround";
 print("\nCalling: \n\t$cmd\n\n");
 system($cmd);

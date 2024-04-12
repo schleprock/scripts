@@ -1,7 +1,12 @@
 #! /usr/bin/env bash
 
+os=$(uname -o)
 echo
 echo "Diffing $1 and $2"
 echo
+nw=""
 files="ediff-files \"${1}\" \"${2}\""
-emacs --eval "($files)"
+if [ "$os" == "GNU/Linux" ]; then
+    nw="-nw"
+fi
+emacs $nw --eval "($files)"
