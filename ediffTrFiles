@@ -24,8 +24,14 @@ sub printHelp
 if(!$fileNumb) {
   $fileNumb = 0;
 }
-my $outputFile = "outputFile${fileNumb}.sed.sed.tr";
-my $goldFile = "outputFile${fileNumb}.gold.sed.sed.tr";
+my $filenameBase = "outputFile${fileNumb}";
+my $sedStuff = "sed.sed.tr";
+my $outputFile = "${filenameBase}.${sedStuff}";
+my $goldFile = "${filenameBase}.gold.${sedStuff}";
+if(-e "${filenameBase}.$sedStuff.sorted") {
+  $outputFile = "${outputFile}.sorted";
+  $goldFile = "${goldFile}.sorted";
+}
 my $backGround = "&";
 if($os eq "linux") {
   $backGround = "";
