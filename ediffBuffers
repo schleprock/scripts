@@ -6,7 +6,7 @@ echo "Diffing $1 and $2"
 echo
 nw=""
 files="ediff-files \"${1}\" \"${2}\""
-if [ "$os" == "GNU/Linux" ]; then
+if [ -z "SSH_CONNECTION" ]; then
     nw="-nw"
 fi
 emacs $nw --eval "($files)"

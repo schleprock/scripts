@@ -33,7 +33,7 @@ if(-e "${filenameBase}.$sedStuff.sorted") {
   $goldFile = "${goldFile}.sorted";
 }
 my $backGround = "&";
-if($os eq "linux") {
+if(defined $ENV{"SSH_CONNECTION" }) {
   $backGround = "";
 }
 my $cmd = "ediffBuffers $outputFile $goldFile $backGround";

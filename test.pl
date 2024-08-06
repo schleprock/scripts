@@ -6,12 +6,10 @@ use Cwd;
 use Cwd 'chdir';
 use Cwd 'realpath';
 
-my $cmd = "$ENV{SHELL} -c 'test2.pl | tee /tmp/crap;exit \${PIPESTATUS[0]}' ";
-print("cmd = $cmd\n");
-print("SHELL = $ENV{SHELL}\n");
-if(system($cmd)) {
-  print("ERROR: $cmd FAILED\n\n");
-} else {
-  print("SUCCESS\n");
-}
-
+print("env = $ENV{\"PATH\"}\n");
+my $oldPath = $ENV{"PATH"};
+print("oldPath = $oldPath\n");
+$ENV{"PATH"} = "";
+print("env = $ENV{\"PATH\"}\n");
+$ENV{"PATH"} = "FOOBAR:${oldPath}";
+print("env = $ENV{\"PATH\"}\n");
