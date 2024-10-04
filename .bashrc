@@ -84,23 +84,20 @@ fi
 export OLD_PATH=$PATH
 export BUILD_SITE=1
 
+source ~/scripts/aliasStuff
+if [ -f ~/TwinBuilder_Dev_ModelicaScripts/moreAliasStuff ]; then
+    source ~/TwinBuilder_Dev_ModelicaScripts/moreAliasStuff
+fi
+if [ -f ~/TwinBuilder_Dev_ModelicaScripts/workBashrcStuff ]; then
+    source ~/TwinBuilder_Dev_ModelicaScripts/workBashrcStuff
+fi
+
 if [[ $- =~ "i" ]]; then
     #we're interactive
     echo "interactive"
     echo "OS: ${os}"
 else
     return
-fi
-
-
-source ~/scripts/aliasStuff
-if [ -f ~/TwinBuilder_Dev_ModelicaScripts/moreAliasStuff ]; then
-    echo "Loading more alias stuff"
-    source ~/TwinBuilder_Dev_ModelicaScripts/moreAliasStuff
-fi
-if [ -f ~/TwinBuilder_Dev_ModelicaScripts/workBashrcStuff ]; then
-    echo "Loading more work bashrc"
-    source ~/TwinBuilder_Dev_ModelicaScripts/workBashrcStuff
 fi
 
 if [ -n "$SSH_CLIENT" ]; then
