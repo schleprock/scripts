@@ -97,6 +97,8 @@ if [[ $- =~ "i" ]]; then
     echo "interactive"
     echo "OS: ${os}"
 else
+    # clear the DISPLAY env so linux regression tests don't fail when creating icons
+    export DISPLAY=''
     return
 fi
 
