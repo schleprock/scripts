@@ -33,6 +33,7 @@ alias saruman="ssh -Y Dad@saruman"
 alias roborio="ssh -Y admin@10.49.5.2"
 alias roborioUSB="ssh -Y admin@172.22.11.2"
 alias pi="ssh -Y pi@4905pi-2.local"
+alias photonVision="ssh -Y pi@10.49.5.11"
 
 alias mkwindir="cmd /c md"
 alias fileExplorer='cmd /c start'
