@@ -2,6 +2,6 @@ XTerm*scrollBar:true
 XTerm*rightScrollBar:true
 XTerm*scrollTtyOutput:false
 XTerm*saveLines:2048
-XTerm*geometry:80x80
+XTerm*geometry:80x70
 XTerm*scrollKey:true
 XTerm*selectToClipboard:true
