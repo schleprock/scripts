@@ -19,7 +19,7 @@
  '(default-frame-alist
    '((vertical-scroll-bars . right)
      (top . 0)
-     (left . 0)
+     (left . 1000)
       (tool-bar-lines . 0)
       (menu-bar-lines . 1)
       (width . 80)
