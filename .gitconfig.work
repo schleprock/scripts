@@ -1,0 +1,32 @@
+[core]
+	autocrlf = input
+	filemode = true
+	editor = \"C:/Program Files/notepad++/notepad++.exe\" -multiInst -nosession
+[user]
+	name = William J. Schilp, PhD
+	email = william.schilp@ansys.com
+[http]
+	sslverify = true
+[fetch]
+	prune = true
+[pull]
+	rebase = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false
+[diff]
+	guitool = kdiff3
+[difftool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = kdiff3
+	guitool = kdiff3
+[mergetool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+[mergetool]
+	keepBackup = false
+[credential]
+	helper = manager-core
