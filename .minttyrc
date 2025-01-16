@@ -1,5 +1,5 @@
 Columns=80
-Rows=80
+Rows=72
 BackgroundColour=255,255,255
 CursorColour=0,0,0
 ThemeFile=xterm
