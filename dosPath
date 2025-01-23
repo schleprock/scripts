@@ -2,7 +2,6 @@
 use strict;
 
 my $dosPath = qx/cygpath.exe -m `pwd`/;
-$dosPath =~ s/\n/ /g;
-# the above substitution adds a space to the end of the path, need to remove it
-chop($dosPath);
+chomp($dosPath);
+$dosPath =~ s!:/msys64!:!;
 print("$dosPath\n");

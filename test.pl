@@ -6,10 +6,9 @@ use Cwd;
 use Cwd 'chdir';
 use Cwd 'realpath';
 
-print("env = $ENV{\"PATH\"}\n");
-my $oldPath = $ENV{"PATH"};
-print("oldPath = $oldPath\n");
-$ENV{"PATH"} = "";
-print("env = $ENV{\"PATH\"}\n");
-$ENV{"PATH"} = "FOOBAR:${oldPath}";
-print("env = $ENV{\"PATH\"}\n");
+if(-l "95549a") {
+  print("link");
+} else {
+  print("not link");
+}
+print("\n");
