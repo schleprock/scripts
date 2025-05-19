@@ -25,5 +25,15 @@
 [mergetool "kdiff3"]
 	path = /bin/kdiff3
 	cmd = /bin/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false
 [mergetool]
 	keepBackup = false
+[credential]
+	helper = manager-core

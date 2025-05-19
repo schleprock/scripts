@@ -1,6 +1,7 @@
 [core]
 	autocrlf = input
 	filemode = true
+      ignorecase=false
 	editor = \"C:/Program Files/notepad++/notepad++.exe\" -multiInst -nosession
 [user]
 	name = William J. Schilp, PhD
@@ -26,9 +27,15 @@
 [mergetool "kdiff3"]
 	path = C:/Program Files/KDiff3/kdiff3.exe
 	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false
 [mergetool]
 	keepBackup = false
 [credential]
 	helper = manager-core
-[safe]
-	directory = *

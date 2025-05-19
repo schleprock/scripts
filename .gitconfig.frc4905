@@ -1,15 +1,28 @@
 [core]
-	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
 	autocrlf = input
+	filemode = true
+      ignorecase=false
+	editor = \"C:/Program Files/notepad++/notepad++.exe\" -multiInst -nosession
 [user]
 	name = Andromeda1ASRSD
 	email = ayershirleyfirst@gmail.com
+[http]
+	sslverify = true
+[fetch]
+	prune = true
+[pull]
+	rebase = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false
 [diff]
 	guitool = kdiff3
 [difftool "kdiff3"]
 	path = C:/Program Files/KDiff3/kdiff3.exe
 	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$LOCAL\" \"$REMOTE\"
 [merge]
+	tool = kdiff3
 	guitool = kdiff3
 [mergetool "kdiff3"]
 	path = C:/Program Files/KDiff3/kdiff3.exe
@@ -22,3 +35,7 @@
 	autoStash = false
 	autosquash = false
 	updateRefs = false
+[mergetool]
+	keepBackup = false
+[credential]
+	helper = manager-core
