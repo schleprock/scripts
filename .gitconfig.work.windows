@@ -1,7 +1,7 @@
 [core]
 	autocrlf = input
 	filemode = true
-      ignorecase=false
+	ignorecase = false
 	editor = \"C:/Program Files/notepad++/notepad++.exe\" -multiInst -nosession
 [user]
 	name = William J. Schilp, PhD
@@ -10,31 +10,28 @@
 	sslverify = true
 [fetch]
 	prune = true
+	prune = false
 [pull]
+	rebase = false
 	rebase = false
 [rebase]
 	autoStash = false
+	autoStash = false
 	autosquash = false
+	autosquash = false
+	updateRefs = false
 	updateRefs = false
 [diff]
 	guitool = kdiff3
 [difftool "kdiff3"]
-	path = C:/Program Files/KDiff3/kdiff3.exe
-	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$LOCAL\" \"$REMOTE\"
+	path = C:/Program Files/KDiff3/bin/kdiff3.exe
+	cmd = \"C:/Program Files/KDiff3/bin/kdiff3.exe\" \"$LOCAL\" \"$REMOTE\"
 [merge]
 	tool = kdiff3
 	guitool = kdiff3
 [mergetool "kdiff3"]
-	path = C:/Program Files/KDiff3/kdiff3.exe
-	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-[pull]
-	rebase = false
-[fetch]
-	prune = false
-[rebase]
-	autoStash = false
-	autosquash = false
-	updateRefs = false
+	path = C:/Program Files/KDiff3/bin/kdiff3.exe
+	cmd = \"C:/Program Files/KDiff3/bin/kdiff3.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 [mergetool]
 	keepBackup = false
 [credential]

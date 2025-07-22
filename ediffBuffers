@@ -9,4 +9,4 @@ files="ediff-files \"${1}\" \"${2}\""
 if [ -z "SSH_CONNECTION" ]; then
     nw="-nw"
 fi
-emacs $nw --eval "($files)"
+emacs $nw --eval "($files)" &
