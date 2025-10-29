@@ -9,17 +9,12 @@
 [http]
 	sslverify = true
 [fetch]
-	prune = true
 	prune = false
 [pull]
 	rebase = false
-	rebase = false
 [rebase]
 	autoStash = false
-	autoStash = false
 	autosquash = false
-	autosquash = false
-	updateRefs = false
 	updateRefs = false
 [diff]
 	guitool = kdiff3
@@ -34,5 +29,3 @@
 	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 [mergetool]
 	keepBackup = false
-[credential]
-	helper = manager-core
