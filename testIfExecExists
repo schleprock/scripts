@@ -1,0 +1,12 @@
+#! /usr/bin/env perl
+
+use strict;
+
+my $cmd = "type $ARGV[0] > /dev/null 2>&1";
+#print("running $cmd\n");
+my $ret = system($cmd);
+#print("ret = $ret\n");
+if($ret) {
+  exit(0);
+}
+exit(1);
