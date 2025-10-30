@@ -27,5 +27,13 @@
 [mergetool "kdiff3"]
 	path = C:/Program Files/KDiff3/kdiff3.exe
 	cmd = \"C:/Program Files/KDiff3/kdiff3.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false
 [mergetool]
 	keepBackup = false
