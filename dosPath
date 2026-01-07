@@ -1,7 +1,9 @@
 #! /usr/bin/env perl
 use strict;
 
-my $dosPath = qx/cygpath.exe -m `pwd`/;
+my $cwd = `pwd`;
+chomp($cwd);
+my $dosPath = qx/cygpath.exe -m "$cwd"/;
 chomp($dosPath);
 $dosPath =~ s!:/msys64!:!;
 print("$dosPath\n");
