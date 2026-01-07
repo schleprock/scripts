@@ -15,3 +15,4 @@ mklink .inputrc scripts\.inputrc
 mklink .minttyrc scripts\.minttyrc
 mklink /d emacslibs scripts\emacslibs
 mklink /d perl5lib scripts\perl5lib
+mklink .3rdpartyArtifactory TwinBuilder_Dev_ModelicaScripts\.3rdpartyArtifactory.canonsburg

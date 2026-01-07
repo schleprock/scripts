@@ -7,7 +7,7 @@
 [http]
 	sslverify = true
 [fetch]
-	prune = true
+	prune = false
 [pull]
 	rebase = false
 [rebase]
@@ -35,5 +35,3 @@
 	updateRefs = false
 [mergetool]
 	keepBackup = false
-[credential]
-	helper = manager-core
