@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+os=$(uname -o)
+
 unset LS_COLORS
 set LS_OPTIONS=--color=auto
 
@@ -36,7 +38,6 @@ alias pi="ssh -Y pi@4905pi-2.local"
 alias photonVision="ssh -Y pi@10.49.5.11"
 
 alias mkwindir="cmd /c md"
-alias fileExplorer='cmd /c start'
 
 alias gitChmodSetExec="git update-index --chmod=+x"
 alias gitChmodUnsetExec="git update-index --chmod=-x"
@@ -46,9 +47,16 @@ alias emacsrobotconfig="emacs /scp:lvuser@10.49.5.2:/home/lvuser/robot.conf"
 alias wsl="/c/Windows/System32/wsl"
 alias excel="/c/Program\ Files/Microsoft\ Office/root/Office16/excel"
 
-uname=$(uname)
-cygwin=${uname:0:6}
-if [ "$cygwin" == "CYGWIN" ]; then
+if [ "$os" = "CYGWIN" ] || [  "$os" = "Msys" ] ; then
     alias dosPath2unix='quoteLine.pl | xargs cygpath.exe'
     alias regedit='regedit.pl'
+fi
+
+if [  "$os" = "GNU/Linux" ]; then
+    alias fileExplorer='thunar > /dev/null 2>&1 &'
+    alias googleChrome='chrome > /dev/null 2>&1 &'
+elif [ "$os" = "CYGWIN" ] || [  "$os" = "Msys" ] ; then
+    alias fileExplorer='explorer .'
+else
+    echo "WARNING: unknown OS: $os, in aliasStuff"
 fi
