@@ -1,7 +1,8 @@
 #! /usr/bin/env bash
 
 usage() {
-    echo "Usage: $(basename "$0")  [-h] target link"
+    echo "Usage: $(basename "$0")  [-h] target [link]"
+    echo "if link not supplied, the basename of target will be used"
 }
 
 while getopts ":h" arg; do
@@ -21,17 +22,20 @@ if [ -z "$1" ]; then
     exit 1
 fi
 first=${1//\//\\}
+second=$2
 if [ -z "$2" ]; then
-    echo "ERROR: must provide link path"
-    usage
-    exit 1
+    # first remove a trailing / if it exists
+    second="${1%/}"
+    second="${second##*/}"
+    echo "No link name supplied, using $second"
 fi
-second=${2//\//\\}
+second=${second//\//\\}
+scriptsPath=`cygpath -m "$HOME/scripts"`
 if [ -d "$1" ]; then
-    myCmd="symLinkDirectory.bat $first $second"
+    myCmd="${scriptsPath}/symLinkDirectory.bat $first $second"
 else
-    myCmd="symLinkFile.bat  $first $second"
+    myCmd="${scriptsPath}/symLinkFile.bat  $first $second"
 fi
 echo "Running $myCmd"
-cmd /c "$myCmd"
+cmd //c "$myCmd"
 
