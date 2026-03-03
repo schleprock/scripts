@@ -37,3 +37,5 @@
 	updateRefs = false
 [mergetool]
 	keepBackup = false
+[safe]
+	directory = D:/git/AndromedaOneCode
