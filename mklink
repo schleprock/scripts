@@ -21,7 +21,20 @@ if [ -z "$1" ]; then
     usage
     exit 1
 fi
-first=${1//\//\\}
+first=$1
+# need to determine if this is an absolute path or a relative path, so check
+# for leading /
+if [[ "$first" = /* ]]; then
+    echo "Source path is an absolute path: $first"
+    # need to convert the drive letter to windows drive, so look for /<letter> and
+    # convert to <letter>:
+    driveLetter="${first:1:1}"
+    # remove the leading /<letter> and replace with <letter>:
+    first="${first:2}"
+    first="${driveLetter}:${first}"
+    echo "converted source path: $first"
+fi
+first=${first//\//\\}
 second=$2
 if [ -z "$2" ]; then
     # first remove a trailing / if it exists
