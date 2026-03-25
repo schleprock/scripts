@@ -1,9 +1,36 @@
 #! /usr/bin/env perl
+
+use Getopt::Long;
+use File::Basename;
+
 use strict;
+
+my $clipboard;
+my $help;
+my $scriptName = basename($0);
+
+GetOptions("clipboard" => \$clipboard,
+           "help|?" => \$help
+    ) or printHelp();
+
+printHelp() if($help);
+
+sub printHelp
+{
+  print("\n$scriptName [--clipboard]");
+  print("\n\t--clipboard: write output to clipboard and drop \\n from output\n\n");
+  exit
+}
+
+
 
 my $cwd = `pwd`;
 chomp($cwd);
 my $dosPath = qx/cygpath.exe -m "$cwd"/;
 chomp($dosPath);
 $dosPath =~ s!:/msys64!:!;
-print("$dosPath\n");
+if($clipboard) {
+  system("echo -n \"$dosPath\" > /dev/clipboard");
+} else {
+  print("$dosPath\n");
+}
