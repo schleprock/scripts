@@ -31,6 +31,7 @@ chomp($dosPath);
 $dosPath =~ s!:/msys64!:!;
 if($clipboard) {
   system("echo -n \"$dosPath\" > /dev/clipboard");
+  print("\n$dosPath\n- written to clipboard\n\n");
 } else {
   print("$dosPath\n");
 }
